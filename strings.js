@@ -114,9 +114,9 @@ const QUESTIONS = [
   {
     "id": 4,
     "question": "Iza no tena anaran'ny mpanoratra mitondra ny solonarana hoe \"Dox\" ?",
-    "reponse": "Jean Verdi Salomon Razakandrainy",
-    "sosona": ["Jean Verdi Salomon Razakandrainy", "Auguste Rajaonarivelo"],
-    "efajoro": ["Auguste Rajaonarivelo", "Jean Verdi Salomon Razakandrainy", "Jacques Rabemananjara", "Georges Andriamanantena"]
+    "reponse": "Jean Verdi Salomon Razakandraina",
+    "sosona": ["Jean Verdi Salomon Razakandraina", "Jean Verdi Salomon Razakandrainy"],
+    "efajoro": ["Auguste Rajaonarivelo", "Jean Verdi Salomon Razakandraina", "Jacques Rabemananjara", "Jean Verdi Salomon Razakandrainy"]
   },
   {
     "id": 5,
