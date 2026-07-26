@@ -91,14 +91,14 @@ const STRINGS = {
 const QUESTIONS = [
   {
     "id": 1,
-    "question": "Iza no mpanoratra malagasy nanoratra tantara foronina betsaka indrindra ?",
+    "question": "Iza ny mpanoratra malagasy nanoratra tantara foronina betsaka indrindra ?",
     "reponse": "Rapatsalahy Paul / Idealy-Soa",
     "sosona": ["Rapatsalahy Paul", "Emilson Daniel Andriamalala"],
     "efajoro": ["Rapatsalahy Paul", "E.D. Andriamalala", "Esther Randriamamonjy", "Randriamiadanarivo"]
   },
   {
     "id": 2,
-    "question": "Inona amin'ireo sombitantara hita ao amin'ny boky Lavakombarika no miresaka momban'ny entana ao an-trano izay mikisaka ho azy ?",
+    "question": "Inona amin'ireo sombitantara hita ao amin'ny boky Lavakombarika no miresaka mombana entana ao an-trano izay mikisaka ho azy ?",
     "reponse": "Taratasy misokatra ho an'i Lobo",
     "sosona": ["Miandry razana", "Taratasy misokatra ho an'i Lobo"],
     "efajoro": ["Matoatoa", "Taratasy misokatra ho an'i Lobo", "Miandry razana", "Tsy matahotra mpamosavy aho"]
@@ -113,7 +113,7 @@ const QUESTIONS = [
   },
   {
     "id": 4,
-    "question": "Iza no tena anaran'ny mpanoratra mitondra ny solonarana hoe \"Dox\" ?",
+    "question": "Iza no tena anaran'ny mpanoratra mitondra ny solonanarana hoe \"Dox\" ?",
     "reponse": "Jean Verdi Salomon Razakandraina",
     "sosona": ["Jean Verdi Salomon Razakandraina", "Jean Verdi Salomon Razakandrainy"],
     "efajoro": ["Auguste Rajaonarivelo", "Jean Verdi Salomon Razakandraina", "Jacques Rabemananjara", "Jean Verdi Salomon Razakandrainy"]
@@ -128,7 +128,7 @@ const QUESTIONS = [
   },
   {
     "id": 6,
-    "question": "Inona ilay boky vahiny lazaina fa nahavoaraoka an-dRabearivelo tao amin'ny Kolejy Masina Misely Amparibe ny namakiany azy ?",
+    "question": "Inona ilay boky vahiny lazaina fa nahavoaraoka an-dRabearivelo tao amin'ny Kolejy Masina Misely Amparibe ny famakiana azy ?",
     "reponse": "Les Fleurs du Mal",
     "sosona": ["Les Fleurs du Mal", "La Métamorphose"],
     "efajoro": ["Les Fleurs du Mal", "Le Spleen de Paris", "La Métamorphose", "Crimes et châtiments"]
