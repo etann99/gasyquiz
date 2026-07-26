@@ -181,32 +181,21 @@ input {
 .icon-btn.active { background: var(--orange); color: #fff; }
 .icon-btn.active:hover { background: var(--orange); }
 
-.projection-banner {
-  background: var(--orange);
-  color: #fff;
-  padding: 6px 16px;
-  text-align: center;
-  font-size: 0.75rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
 /* ---------- Main layout ---------- */
 .main {
   flex: 1;
   max-width: 48rem;
   width: 100%;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 16px 16px 24px;
   padding-left: max(16px, env(safe-area-inset-left));
   padding-right: max(16px, env(safe-area-inset-right));
   padding-bottom: max(24px, env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* Hug the top instead of centering — centering a short column in a tall
+     viewport is what created the big empty gaps above/below the card. */
+  justify-content: flex-start;
   position: relative;
   z-index: 1;
 }
@@ -303,12 +292,11 @@ input {
   font-family: var(--font-serif);
   font-weight: 700;
   color: var(--text);
-  line-height: 1.35;
+  line-height: 1.3;
   letter-spacing: -0.01em;
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin: 0;
 }
-.question-text.projection { font-size: 1.25rem; }
 
 .mode-selector-wrap { margin: 12px 0 20px; }
 .mode-selector {
@@ -683,8 +671,7 @@ input {
   .nav-dot { width: 40px; height: 40px; font-size: 0.875rem; }
 
   .question-card { border-radius: 24px; padding: 32px 40px; }
-  .question-text { font-size: 1.25rem; }
-  .question-text.projection { font-size: 1.875rem; }
+  .question-text { font-size: 1.5rem; }
 
   .mode-selector { border-radius: 999px; }
   .mode-btn { flex-direction: row; padding: 8px 16px; font-size: 0.875rem; border-radius: 999px; }

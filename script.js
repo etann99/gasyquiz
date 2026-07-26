@@ -207,7 +207,6 @@ const state = {
   currentIndex: 0,
   selectedModes: {},   // { [questionId]: 'manta' | 'sosona' | 'efajoro' }
   results: {},          // { [questionId]: { questionId, mode, userAnswer, isCorrect, pointsEarned, timestamp } }
-  isProjectionMode: false,
   showSummary: false
 };
 
@@ -289,9 +288,6 @@ function renderHeader(score) {
         <button id="btn-open-summary" class="score-badge" type="button">
           ${icon('trophy', 'icon-gold')}<span>${score} pts</span>
         </button>
-        <button id="btn-toggle-projection" class="icon-btn ${state.isProjectionMode ? 'active' : ''}" type="button" title="${escapeHtml(t('header.projectionMode'))}">
-          ${icon('tv')}
-        </button>
         <button id="btn-reset" class="icon-btn" type="button" title="${escapeHtml(t('header.resetGame'))}">
           ${icon('rotateCcw')}
         </button>
@@ -299,10 +295,6 @@ function renderHeader(score) {
     </div>
     ${zafimaniry('strip', 'zf-strip-opacity')}
   </header>`;
-}
-
-function renderProjectionBanner() {
-  return `<div class="projection-banner">${icon('tv', 'icon-sm')}<span>${escapeHtml(t('projection.title'))}</span></div>`;
 }
 
 function renderNav() {
@@ -385,7 +377,7 @@ function renderQuestionCard(q, result, selectedMode) {
       ${result ? `<span class="mode-tag">${result.mode.toUpperCase()}</span>` : ''}
     </div>
     <div class="question-text-wrap">
-      <h2 class="question-text ${state.isProjectionMode ? 'projection' : ''}">${escapeHtml(q.question)}</h2>
+      <h2 class="question-text">${escapeHtml(q.question)}</h2>
     </div>
     <div class="mode-selector-wrap">${renderModeSelector(selectedMode, Boolean(result))}</div>
     ${zafimaniry('divider', 'zf-divider-tight')}
@@ -500,7 +492,6 @@ function renderApp() {
   return `
     ${zafimaniry('background', 'zf-fixed')}
     ${renderHeader(totalScore)}
-    ${state.isProjectionMode ? renderProjectionBanner() : ''}
     <main class="main">
       ${renderNav()}
       ${renderQuestionCard(currentQuestion, currentResult, currentMode)}
@@ -525,9 +516,6 @@ function attachListeners() {
 
   const openSummaryBtn = $('#btn-open-summary');
   if (openSummaryBtn) openSummaryBtn.addEventListener('click', () => { state.showSummary = true; render(); });
-
-  const toggleProjBtn = $('#btn-toggle-projection');
-  if (toggleProjBtn) toggleProjBtn.addEventListener('click', () => { state.isProjectionMode = !state.isProjectionMode; render(); });
 
   const resetBtn = $('#btn-reset');
   if (resetBtn) resetBtn.addEventListener('click', handleReset);
