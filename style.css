@@ -187,14 +187,16 @@ input {
   max-width: 48rem;
   width: 100%;
   margin: 0 auto;
-  padding: 16px 16px 24px;
+  padding: 28px 16px 24px;
   padding-left: max(16px, env(safe-area-inset-left));
   padding-right: max(16px, env(safe-area-inset-right));
   padding-bottom: max(24px, env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   /* Hug the top instead of centering — centering a short column in a tall
-     viewport is what created the big empty gaps above/below the card. */
+     viewport creates big empty gaps above/below the content. Any leftover
+     space just collects as a normal trailing gap at the bottom, which is
+     fine — we spend some of it as breathing room between sections instead. */
   justify-content: flex-start;
   position: relative;
   z-index: 1;
@@ -207,7 +209,7 @@ input {
   justify-items: center;
   align-items: center;
   gap: 10px 8px;
-  margin: 0 auto 20px;
+  margin: 0 auto 32px;
   max-width: 320px;
   width: 100%;
 }
@@ -261,12 +263,6 @@ input {
   margin: 0 auto;
   width: 100%;
   overflow: hidden;
-  /* Grow to fill whatever vertical space is left in .main, rather than
-     leaving a dead gap underneath — Prev/Next then anchor to the bottom
-     via .card-nav's margin-top: auto below. */
-  flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .card-top-row {
@@ -426,7 +422,7 @@ input {
 .muted-text { color: var(--muted); }
 
 .card-nav {
-  margin-top: auto;
+  margin-top: 24px;
   padding-top: 16px;
   border-top: 1px solid var(--border);
   display: flex;
@@ -668,7 +664,8 @@ input {
   }
   .modal-box::before { display: none; }
 
-  .nav-row { max-width: 380px; gap: 12px 10px; margin-bottom: 28px; }
+  .main { padding-top: 36px; }
+  .nav-row { max-width: 380px; gap: 12px 10px; margin-bottom: 40px; }
   .nav-dot { width: 52px; height: 52px; font-size: 1.05rem; }
 
   .question-card { border-radius: 24px; padding: 32px 40px; }
@@ -685,7 +682,7 @@ input {
   .options-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .option-btn { padding: 16px; font-size: 1rem; }
 
-  .card-nav { margin-top: auto; padding-top: 20px; }
+  .card-nav { margin-top: 32px; }
 
   .modal-box { padding: 32px; }
   .modal-title { font-size: 1.875rem; }
