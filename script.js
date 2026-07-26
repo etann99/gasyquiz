@@ -592,11 +592,6 @@ function attachListeners() {
       render();
     });
   }
-
-  const activeDot = $('.nav-dot.active');
-  if (activeDot && typeof activeDot.scrollIntoView === 'function') {
-    activeDot.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-  }
 }
 
 document.addEventListener('DOMContentLoaded', render);

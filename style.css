@@ -202,35 +202,30 @@ input {
 
 /* ---------- Question nav dots ---------- */
 .nav-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
   align-items: center;
-  justify-content: flex-start;
-  gap: 6px;
-  margin-bottom: 16px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x proximity;
-  padding: 8px 4px;
-  max-width: 100%;
-  scrollbar-width: none;
+  gap: 10px 8px;
+  margin: 0 auto 20px;
+  max-width: 320px;
+  width: 100%;
 }
-.nav-row::-webkit-scrollbar { display: none; }
 
 .nav-dot {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--bg);
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   position: relative;
   transition: all 0.15s ease;
-  scroll-snap-align: center;
 }
 .nav-dot:hover { border-color: var(--wine); }
 .nav-dot.active {
@@ -238,8 +233,8 @@ input {
   color: #fff;
   border-color: var(--wine);
   font-weight: 700;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transform: scale(1.08);
 }
 .nav-dot.correct { background: rgba(21,128,61,0.1); color: var(--green); border-color: rgba(21,128,61,0.3); font-weight: 500; }
 .nav-dot.incorrect { background: rgba(185,28,28,0.1); color: var(--red); border-color: rgba(185,28,28,0.3); font-weight: 500; }
@@ -247,7 +242,7 @@ input {
 .nav-status {
   position: absolute;
   top: -2px; right: -2px;
-  width: 10px; height: 10px;
+  width: 12px; height: 12px;
   border-radius: 999px;
   border: 2px solid var(--bg);
 }
@@ -266,6 +261,12 @@ input {
   margin: 0 auto;
   width: 100%;
   overflow: hidden;
+  /* Grow to fill whatever vertical space is left in .main, rather than
+     leaving a dead gap underneath — Prev/Next then anchor to the bottom
+     via .card-nav's margin-top: auto below. */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-top-row {
@@ -425,7 +426,7 @@ input {
 .muted-text { color: var(--muted); }
 
 .card-nav {
-  margin-top: 24px;
+  margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--border);
   display: flex;
@@ -667,8 +668,8 @@ input {
   }
   .modal-box::before { display: none; }
 
-  .nav-row { justify-content: center; gap: 8px; margin-bottom: 24px; }
-  .nav-dot { width: 40px; height: 40px; font-size: 0.875rem; }
+  .nav-row { max-width: 380px; gap: 12px 10px; margin-bottom: 28px; }
+  .nav-dot { width: 52px; height: 52px; font-size: 1.05rem; }
 
   .question-card { border-radius: 24px; padding: 32px 40px; }
   .question-text { font-size: 1.5rem; }
@@ -684,7 +685,7 @@ input {
   .options-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .option-btn { padding: 16px; font-size: 1rem; }
 
-  .card-nav { margin-top: 32px; }
+  .card-nav { margin-top: auto; padding-top: 20px; }
 
   .modal-box { padding: 32px; }
   .modal-title { font-size: 1.875rem; }
